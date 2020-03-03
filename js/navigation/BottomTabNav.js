@@ -2,6 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {sharedScreenOptions} from './config';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
@@ -10,7 +11,6 @@ import FavesScreen from '../screens/Faves';
 import AboutScreen from '../screens/About';
 
 const ScheduleStack = createStackNavigator();
-const SessionStack = createStackNavigator();
 const FavesStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 const MapsStack = createStackNavigator();
@@ -62,7 +62,25 @@ const BottomTabNavScreens = props => (
       inactiveTintColor: '#999999',
       labelStyle: {fontSize: 10, fontFamily: 'Montserrat'},
       style: {backgroundColor: 'black'},
-    }}>
+    }}
+    screenOptions={({route}) => ({
+      tabBarIcon: ({focused, color, size}) => {
+        let iconName;
+
+        if (route.name === 'Schedule') {
+          iconName = focused ? 'calendar' : 'calendar-blank-outline';
+        } else if (route.name === 'Maps') {
+          iconName = focused ? 'map' : 'map-outline';
+        } else if (route.name === 'Faves') {
+          iconName = focused ? 'heart' : 'heart-outline';
+        } else if (route.name === 'About') {
+          iconName = focused ? 'information' : 'information-outline';
+        }
+        return (
+          <MaterialCommunityIcons name={iconName} size={size} color={color} />
+        );
+      },
+    })}>
     <BottomTabNav.Screen name="Schedule" component={ScheduleStackScreen} />
     <BottomTabNav.Screen name="Maps" component={MapsStackScreen} />
     <BottomTabNav.Screen name="Faves" component={FavesStackScreen} />
