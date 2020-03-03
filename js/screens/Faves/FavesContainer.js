@@ -5,7 +5,7 @@ export default class FavesContainer extends Component {
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <Text> This is the Faves Screen </Text>
       </View>
     );
   }
