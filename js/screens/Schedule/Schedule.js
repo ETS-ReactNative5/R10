@@ -1,10 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, ShadowPropTypesIOS} from 'react-native';
 
-const Schedule = () => {
+const Schedule = props => {
   return (
     <View>
-      <Text>text</Text>
+      <Text>Session Page</Text>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Session')}>
+        <Text>Go to Session</Text>
+      </TouchableOpacity>
     </View>
   );
 };
