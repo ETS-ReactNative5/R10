@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, ScrollView, Text, FlatList, Image} from 'react-native';
-import styles from './styles';
 
 const About = props => {
   return (
@@ -24,7 +23,13 @@ const About = props => {
           Vancouver, BC
         </Text>
         <Text>Code of Conduct</Text>
-
+        {/* <FlatList
+          data={props.data.allConducts}
+          renderItem={({item}) => {
+            return 
+          }}
+          keyExtractor={item => item.id}
+        /> */}
         <Text>&copy; Ringo Wong 2020</Text>
       </ScrollView>
     </View>
