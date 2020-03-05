@@ -13,6 +13,13 @@ const SCHEDULE = gql`
       location
       startTime
       title
+      speaker {
+        id
+        bio
+        image
+        name
+        url
+      }
     }
   }
 `;
@@ -22,18 +29,19 @@ export default class ScheduleContainer extends Component {
     return (
       <Query query={SCHEDULE}>
         {({loading, error, data}) => {
-          if (loading)
+          if (loading) {
             return <ActivityIndicator size="large" style={{height: '100%'}} />;
-          if (error) return <Text>{`Error! ${error.message}`}</Text>;
-          console.log('ERROR:', error);
-          {
-            return (
-              <Schedule
-                data={formatSessionData(data.allSessions)}
-                navigation={this.props.navigation}
-              />
-            );
           }
+          if (error) {
+            return <Text>{`Error! ${error.message}`}</Text>;
+          }
+          console.log('ERROR:', error);
+          return (
+            <Schedule
+              data={formatSessionData(data.allSessions)}
+              navigation={this.props.navigation}
+            />
+          );
         }}
       </Query>
     );

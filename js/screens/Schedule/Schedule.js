@@ -34,7 +34,7 @@ const Schedule = props => {
                 underlayColor={'transparent'}
                 onPress={() => {
                   if (!item.speaker) {
-                    props.navigation.navigate('Maps', {});
+                    props.navigation.navigate('Session', {});
                   } else {
                     props.navigation.navigate('Session', {
                       item: item,

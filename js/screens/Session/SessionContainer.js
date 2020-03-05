@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
+import Session from './Session';
 
 export default class SessionContainer extends Component {
   render() {
