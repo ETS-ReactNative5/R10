@@ -1,7 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {sharedScreenOptions} from './config';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import ScheduleScreen from '../screens/Schedule';

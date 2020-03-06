@@ -6,30 +6,36 @@ import {formatSessionData} from '../Schedule/Helper/FormatSessionData';
 const Faves = ({faveIds, navigation, sessions}) => {
   return (
     <View>
-      <SectionList
-        sections={formatSessionData(sessions)}
-        renderItem={({item}) =>
-          faveIds.includes(item.id, 0) ? (
+      {sessions && sessions.length ? (
+        <SectionList
+          sections={formatSessionData(sessions)}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => (
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Session', {
                   session: item,
                 });
               }}>
+              <Text>{item.title}</Text>
+              <Text>{item.location}</Text>
               <View>
-                <Text>{item.title}</Text>
-                <Text>{item.location}</Text>
+                <MaterialCommunityIcons name="heart" color="#cf392a" />
               </View>
-              <Text>
-                {faveIds.includes(item.id, 0) ? (
-                  <MaterialCommunityIcons name="heart" color="#cf392a" />
-                ) : null}
-              </Text>
             </TouchableOpacity>
-          ) : null
-        }
-        keyExtractor={item => item.id}
-      />
+          )}
+        />
+      ) : (
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontSize: 16}}>
+            You haven't faved any sessions yet.
+          </Text>
+        </View>
+      )}
     </View>
   );
 };

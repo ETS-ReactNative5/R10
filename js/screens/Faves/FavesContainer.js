@@ -3,7 +3,6 @@ import Faves from './Faves';
 import {Text, ActivityIndicator} from 'react-native';
 import {gql} from 'apollo-boost';
 import {Query} from '@apollo/react-components';
-
 import {FavesContext} from '../../context/FavesContext';
 
 const QUERY_ALL = gql`
@@ -24,6 +23,7 @@ const QUERY_ALL = gql`
     }
   }
 `;
+
 class FavesContainer extends Component {
   render() {
     return (
