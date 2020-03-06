@@ -2,7 +2,6 @@ import React from 'react';
 import {View, ScrollView, Text, Image, TouchableOpacity} from 'react-native';
 import moment from 'moment';
 import GradientButton from '../../components/GradientButton';
-// import FavesProvider from '../../context/FavesContext';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Session = ({
@@ -21,7 +20,6 @@ const Session = ({
             justifyContent: 'space-between',
             alignItems: 'center',
             width: '100%',
-            padding: 5,
           }}>
           <Text>{data.location}</Text>
           {faveIds.includes(data.id) ? (

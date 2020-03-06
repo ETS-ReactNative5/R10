@@ -24,7 +24,7 @@ const QUERY_ALL = gql`
   }
 `;
 
-class FavesContainer extends Component {
+export default class FavesContainer extends Component {
   render() {
     return (
       <FavesContext.Consumer>
@@ -53,4 +53,3 @@ class FavesContainer extends Component {
     );
   }
 }
-export default FavesContainer;
