@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {queryFaves, deleteFave, createFave} from '../../config/models';
-import PropTypes from 'prop-types';
 
 export const FavesContext = React.createContext();
 
