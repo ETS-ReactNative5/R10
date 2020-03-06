@@ -27,7 +27,7 @@ const Faves = ({faveIds, navigation, sessions}) => {
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Session', {
-                  session: item,
+                  item: item,
                 });
               }}>
               <Text>{item.title}</Text>
