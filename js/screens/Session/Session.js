@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, ScrollView, Text, Image} from 'react-native';
+import {View, ScrollView, Text, Image, Button} from 'react-native';
 import moment from 'moment';
 
 const Session = ({data}) => {
+  console.log(data);
   return (
     <ScrollView>
       <View
@@ -18,6 +19,15 @@ const Session = ({data}) => {
       <Text>{moment(data.startTime).format('LT')} </Text>
       <Text>{data.description}</Text>
       <Text>Presented by:</Text>
+      <Image
+        style={{width: 60, height: 60}}
+        source={{uri: data.speaker.image}}
+      />
+      <Text> {data.speaker.name}</Text>
+      <Button
+        title="Add to Faves"
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
     </ScrollView>
   );
 };
