@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
 import Session from './Session';
 
 export default class SessionContainer extends Component {
   render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    );
+    return <Session data={this.props.route.params.item} />;
   }
 }
