@@ -7,13 +7,14 @@ import {
   Text,
   TouchableHighlight,
   View,
+  SafeAreaView,
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import GradientButton from '../../components/GradientButton';
 
 const Speaker = ({speaker, navigation}) => {
   return (
-    <View>
+    <SafeAreaView>
       <TouchableHighlight
         underlayColor={'transparent'}
         onPress={() => navigation.goBack()}>
@@ -43,7 +44,7 @@ const Speaker = ({speaker, navigation}) => {
           title={'Read More on Wikipedia'}
         />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
