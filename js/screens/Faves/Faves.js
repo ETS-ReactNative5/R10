@@ -1,12 +1,36 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text, TouchableOpacity, SectionList, View} from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {formatSessionData} from '../Schedule/Helper/FormatSessionData';
 
-const Faves = () => {
+const Faves = ({faveIds, navigation, sessions}) => {
   return (
     <View>
-      <Text>Some Text Here</Text>
+      <SectionList
+        sections={formatSessionData(sessions)}
+        renderItem={({item}) =>
+          faveIds.includes(item.id, 0) ? (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Session', {
+                  session: item,
+                });
+              }}>
+              <View>
+                <Text>{item.title}</Text>
+                <Text>{item.location}</Text>
+              </View>
+              <Text>
+                {faveIds.includes(item.id, 0) ? (
+                  <MaterialCommunityIcons name="heart" color="#cf392a" />
+                ) : null}
+              </Text>
+            </TouchableOpacity>
+          ) : null
+        }
+        keyExtractor={item => item.id}
+      />
     </View>
   );
 };
-
 export default Faves;
