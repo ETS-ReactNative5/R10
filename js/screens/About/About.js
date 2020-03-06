@@ -2,6 +2,7 @@ import React from 'react';
 import {View, ScrollView, Text, FlatList, Image} from 'react-native';
 
 const About = ({data}) => {
+  console.log(data);
   return (
     <View>
       <ScrollView>

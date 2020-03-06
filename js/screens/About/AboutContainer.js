@@ -24,9 +24,9 @@ export default class AboutContainer extends Component {
             return <ActivityIndicator size="large" style={{height: '100%'}} />;
           }
           if (error) {
+            console.log('ERROR:', error);
             return <Text>{`Error! ${error.message}`}</Text>;
           }
-          console.log('ERROR:', error);
           return <About data={data.allConducts} />;
         }}
       </Query>

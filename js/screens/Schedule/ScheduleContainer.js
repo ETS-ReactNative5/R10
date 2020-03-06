@@ -4,6 +4,7 @@ import Schedule from './Schedule';
 import {gql} from 'apollo-boost';
 import {Query} from '@apollo/react-components';
 import {formatSessionData} from './Helper/FormatSessionData';
+import FavesProvider, {FavesContext} from '../../context/FavesContext';
 
 // SCHEDULE
 const SCHEDULE = gql`
@@ -28,23 +29,31 @@ const SCHEDULE = gql`
 export default class ScheduleContainer extends Component {
   render() {
     return (
-      <Query query={SCHEDULE}>
-        {({loading, error, data}) => {
-          if (loading) {
-            return <ActivityIndicator size="large" style={{height: '100%'}} />;
-          }
-          if (error) {
-            return <Text>{`Error! ${error.message}`}</Text>;
-          }
-          console.log('ERROR:', error);
-          return (
-            <Schedule
-              data={formatSessionData(data.allSessions)}
-              navigation={this.props.navigation}
-            />
-          );
-        }}
-      </Query>
+      <FavesContext.Consumer>
+        {({faveIds}) => (
+          <Query query={SCHEDULE}>
+            {({loading, error, data}) => {
+              if (loading) {
+                return (
+                  <ActivityIndicator size="large" style={{height: '100%'}} />
+                );
+              }
+              if (error) {
+                console.log('ERROR:', error);
+                return <Text>{`Error! ${error.message}`}</Text>;
+              }
+
+              return (
+                <Schedule
+                  data={formatSessionData(data.allSessions)}
+                  navigation={this.props.navigation}
+                  faveIds={faveIds}
+                />
+              );
+            }}
+          </Query>
+        )}
+      </FavesContext.Consumer>
     );
   }
 }

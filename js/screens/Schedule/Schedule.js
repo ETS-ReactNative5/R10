@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, SectionList, TouchableHighlight} from 'react-native';
 import moment from 'moment';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // Move all in-line styling to styles.js and import it into schedule.js
 
 const Schedule = props => {
+  console.log(props);
   return (
     <View
       style={{
@@ -56,19 +58,33 @@ const Schedule = props => {
                       }}>
                       {item.title}
                     </Text>
+
                     <View
                       style={{
-                        paddingTop: 8,
-                        height: 30,
+                        flexDirection: 'row',
+                        alignItems: 'space-between',
                       }}>
-                      <Text
+                      <View
                         style={{
-                          color: '#999999',
-                          fontWeight: '500',
-                          height: 30,
+                          paddingTop: 8,
                         }}>
-                        {item.location}
-                      </Text>
+                        <Text
+                          style={{
+                            color: '#999999',
+                            fontWeight: '500',
+                          }}>
+                          {item.location}
+                        </Text>
+                      </View>
+
+                      <View>
+                        {/* {props.faveIds.includes(props.data[0].data[0].id) ? (
+                          <MaterialCommunityIcons
+                            name="heart"
+                            color="#cf392a"
+                          />
+                        ) : null} */}
+                      </View>
                     </View>
                   </View>
                 </View>
