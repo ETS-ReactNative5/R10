@@ -2,6 +2,8 @@ import React from 'react';
 import {View, ScrollView, Text, Image, TouchableOpacity} from 'react-native';
 import moment from 'moment';
 import GradientButton from '../../components/GradientButton';
+// import FavesProvider from '../../context/FavesContext';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Session = ({
   data,
@@ -22,6 +24,9 @@ const Session = ({
             padding: 5,
           }}>
           <Text>{data.location}</Text>
+          {faveIds.includes(data.id) ? (
+            <MaterialCommunityIcons name="heart" color="#cf392a" />
+          ) : null}
         </View>
         <Text>{data.title}</Text>
         <Text>{moment(data.startTime).format('LT')} </Text>

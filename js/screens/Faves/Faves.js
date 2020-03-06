@@ -2,12 +2,25 @@ import React from 'react';
 import {Text, TouchableOpacity, SectionList, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatSessionData} from '../Schedule/Helper/FormatSessionData';
+import moment from 'moment';
 
 const Faves = ({faveIds, navigation, sessions}) => {
   return (
     <View>
       {sessions && sessions.length ? (
         <SectionList
+          renderSectionHeader={({section: {title}}) => (
+            <Text
+              style={{
+                paddingTop: 5,
+                paddingLeft: 10,
+                backgroundColor: '#e6e6e6',
+                fontWeight: '600',
+                height: 25,
+              }}>
+              {moment(title).format('LT')}
+            </Text>
+          )}
           sections={formatSessionData(sessions)}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
