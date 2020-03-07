@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, SectionList, TouchableHighlight} from 'react-native';
 import moment from 'moment';
@@ -6,7 +7,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 // Move all in-line styling to styles.js and import it into schedule.js
 
 const Schedule = props => {
-  console.log(props);
   return (
     <View
       style={{
@@ -62,7 +62,7 @@ const Schedule = props => {
                     <View
                       style={{
                         flexDirection: 'row',
-                        alignItems: 'space-between',
+                        justifyContent: 'space-between',
                       }}>
                       <View
                         style={{
@@ -78,12 +78,12 @@ const Schedule = props => {
                       </View>
 
                       <View>
-                        {/* {props.faveIds.includes(props.data[0].data[0].id) ? (
+                        {props.faveIds.includes(item.id) ? (
                           <MaterialCommunityIcons
                             name="heart"
                             color="#cf392a"
                           />
-                        ) : null} */}
+                        ) : null}
                       </View>
                     </View>
                   </View>
