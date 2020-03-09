@@ -46,6 +46,7 @@ const AboutStackScreen = props => {
     </AboutStack.Navigator>
   );
 };
+
 const MapsStackScreen = props => {
   return (
     <MapsStack.Navigator screenOptions={sharedScreenOptions}>
@@ -81,7 +82,7 @@ const BottomTabNavScreens = props => (
         );
       },
     })}>
-    <BottomTabNav.Screen name="Schedule" component={ScheduleStackScreen} />
+    <BottomTabNav.Screen name="Schedule" component={AboutStackScreen} />
     <BottomTabNav.Screen name="Maps" component={MapsStackScreen} />
     <BottomTabNav.Screen name="Faves" component={FavesStackScreen} />
     <BottomTabNav.Screen name="About" component={AboutStackScreen} />

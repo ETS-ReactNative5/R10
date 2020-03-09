@@ -1,8 +1,35 @@
 import React from 'react';
-import {View, ScrollView, Text, FlatList, Image} from 'react-native';
+import {
+  View,
+  ScrollView,
+  Text,
+  FlatList,
+  Image,
+  LayoutAnimation,
+  TouchableOpacity,
+  Platform,
+  UIManager,
+} from 'react-native';
+
+if (Platform.OS === 'android') {
+  if (UIManager.setLayoutAnimationEnabledExperimental) {
+    UIManager.setLayoutAnimationEnabledExperimental(true);
+  }
+}
 
 const About = ({data}) => {
-  console.log(data);
+  const animationConfig = {
+    duration: 4000,
+    create: {
+      type: 'linear',
+      property: 'opacity',
+    },
+    update: {type: 'spring', springDamping: 0.4},
+    delete: {
+      type: 'linear',
+      property: 'opacity',
+    },
+  };
   return (
     <View>
       <ScrollView>
@@ -36,14 +63,15 @@ const About = ({data}) => {
             keyExtractor={item => item.id}
             renderItem={({item}) => {
               return (
-                <Text
-                  style={{
-                    padding: 5,
-                    fontSize: 16,
-                    fontWeight: '400',
-                  }}>
-                  {item.title}
-                </Text>
+                <View style={{padding: 5, fontSize: 16}}>
+                  <Text
+                    style={{
+                      fontWeight: '400',
+                    }}>
+                    {item.title}
+                  </Text>
+                  <Text>{item.description}</Text>
+                </View>
               );
             }}
           />
