@@ -43,15 +43,19 @@ const Faves = ({faveIds, navigation, sessions}) => {
                   style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
+                    paddingTop: 8,
                   }}>
                   <View>
-                    <Text
-                      style={{color: '#999', fontWeight: '500', paddingTop: 8}}>
+                    <Text style={{color: '#999', fontWeight: '500'}}>
                       {item.location}
                     </Text>
                   </View>
                   <View>
-                    <MaterialCommunityIcons name="heart" color="#cf392a" />
+                    <MaterialCommunityIcons
+                      size={16}
+                      name="heart"
+                      color="#cf392a"
+                    />
                   </View>
                 </View>
               </View>

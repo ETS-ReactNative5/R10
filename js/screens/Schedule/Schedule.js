@@ -63,11 +63,9 @@ const Schedule = props => {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
+                        paddingTop: 8,
                       }}>
-                      <View
-                        style={{
-                          paddingTop: 8,
-                        }}>
+                      <View>
                         <Text
                           style={{
                             color: '#999999',
@@ -80,6 +78,7 @@ const Schedule = props => {
                       <View>
                         {props.faveIds.includes(item.id) ? (
                           <MaterialCommunityIcons
+                            size={16}
                             name="heart"
                             color="#cf392a"
                           />
