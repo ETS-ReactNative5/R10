@@ -30,8 +30,8 @@ const About = ({data}) => {
             );
           })}
         </View>
+        <Text style={styles.copyright}>&copy; Ringo Wong 2020</Text>
       </ScrollView>
-      <Text style={styles.copyright}>&copy; Ringo Wong 2020</Text>
     </View>
   );
 };

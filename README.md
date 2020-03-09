@@ -4,7 +4,7 @@ A mobile application using React Native for an upcoming developer conference cal
 
 # Screenshots
 
-![Schedule](js/assets/Screenshots/schedule.png)
+![Schedule](js/assets/Screenshots/schedule1.png)
 ![Maps](js/assets/Screenshots/map.png)
 ![Faves](js/assets/Screenshots/faves.png)
 ![Session](js/assets/Screenshots/session.png)
