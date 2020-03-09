@@ -16,7 +16,7 @@ const About = ({data}) => {
           }}>
           <Image source={require('../../assets/images/r10_logo.png')} />
         </View>
-        <View style={{padding: 10}}>
+        <View style={{padding: 10, borderBottomWidth: 1}}>
           <Text style={{fontSize: 16, padding: 5}}>
             R10 is a conference that focuses on just about any topic related to
             dev.
@@ -35,22 +35,14 @@ const About = ({data}) => {
             return (
               <View key={codeOfConduct.id} style={{padding: 5, fontSize: 16}}>
                 <ConductAnimation data={codeOfConduct} />
-                {/* <Text
-                  style={{
-                    fontWeight: '400',
-                  }}>
-                  {codeOfConduct.title}
-                </Text>
-                <Text>{codeOfConduct.description}</Text> */}
               </View>
             );
           })}
-
-          <Text style={{fontSize: 16, borderTopWidth: 1}}>
-            &copy; Ringo Wong 2020
-          </Text>
         </View>
       </ScrollView>
+      <Text style={{fontSize: 16, borderTopWidth: 1}}>
+        &copy; Ringo Wong 2020
+      </Text>
     </View>
   );
 };

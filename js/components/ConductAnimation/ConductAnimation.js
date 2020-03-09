@@ -20,21 +20,35 @@ class ConductAnimation extends Component {
     super(props);
     this.state = {
       toggle: false,
+      rotate: new Animated.Value(0),
     };
   }
+
+  rotate = () => {
+    this.state.rotate.setValue(0);
+    Animated.timing(this.state.rotate, {
+      toValue: 1,
+      duration: 300,
+    }).start();
+  };
 
   toggle = () => {
     LayoutAnimation.Presets.easeInEaseOut;
     this.setState({toggle: !this.state.toggle});
+    this.rotate();
   };
 
   render() {
     const {data} = this.props;
+    const Spin = this.state.rotate.interpolate({
+      inputRange: ['0', '1'],
+      outputRange: ['0deg', '-360deg'],
+    });
 
     return (
       <View>
         <TouchableOpacity
-          activeOpacity={1}
+          activeOpacity={0.7}
           onPress={() => {
             this.toggle();
           }}>
@@ -42,7 +56,7 @@ class ConductAnimation extends Component {
             <View>
               <View style={{flexDirection: 'row'}}>
                 <View>
-                  <Animated.View>
+                  <Animated.View style={{transform: [{rotate: Spin}]}}>
                     <Text>-</Text>
                   </Animated.View>
                 </View>
@@ -54,7 +68,7 @@ class ConductAnimation extends Component {
           ) : (
             <View style={{flexDirection: 'row'}}>
               <View>
-                <Animated.View>
+                <Animated.View style={{transform: [{rotate: Spin}]}}>
                   <Text>+</Text>
                 </Animated.View>
               </View>
