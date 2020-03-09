@@ -30,10 +30,30 @@ const Faves = ({faveIds, navigation, sessions}) => {
                   item: item,
                 });
               }}>
-              <Text>{item.title}</Text>
-              <Text>{item.location}</Text>
-              <View>
-                <MaterialCommunityIcons name="heart" color="#cf392a" />
+              <View
+                style={{
+                  padding: 10,
+                  borderBottomWidth: 2,
+                  borderBottomColor: '#e6e6e6',
+                }}>
+                <Text style={{fontSize: 16, fontWeight: '500'}}>
+                  {item.title}
+                </Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View>
+                    <Text
+                      style={{color: '#999', fontWeight: '500', paddingTop: 8}}>
+                      {item.location}
+                    </Text>
+                  </View>
+                  <View>
+                    <MaterialCommunityIcons name="heart" color="#cf392a" />
+                  </View>
+                </View>
               </View>
             </TouchableOpacity>
           )}

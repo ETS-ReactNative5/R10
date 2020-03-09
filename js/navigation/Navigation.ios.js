@@ -82,7 +82,7 @@ const BottomTabNavScreens = props => (
         );
       },
     })}>
-    <BottomTabNav.Screen name="Schedule" component={AboutStackScreen} />
+    <BottomTabNav.Screen name="Schedule" component={ScheduleStackScreen} />
     <BottomTabNav.Screen name="Maps" component={MapsStackScreen} />
     <BottomTabNav.Screen name="Faves" component={FavesStackScreen} />
     <BottomTabNav.Screen name="About" component={AboutStackScreen} />
