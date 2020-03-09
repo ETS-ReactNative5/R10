@@ -3,9 +3,10 @@ import {StyleSheet, View, Platform} from 'react-native';
 import {Header} from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from './styles';
 
 const GradientHeader = props => (
-  <View style={{backgroundColor: 'white', overflow: 'hidden'}}>
+  <View style={styles.header}>
     <LinearGradient
       colors={['#cf392a', '#9963ea']}
       start={{x: 0.0, y: 1.0}}
@@ -22,7 +23,7 @@ const MenuButton = ({navigation}) => {
       name="menu"
       color="white"
       size={25}
-      style={{marginLeft: 10}}
+      style={styles.menuButton}
       onPress={() => navigation.toggleDrawer()}
     />
   );

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MapView, {Marker} from 'react-native-maps';
 import {Image} from 'react-native';
+import styles from './styles';
 
 export default class Maps extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Maps extends Component {
       <>
         <MapView
           zoomEnabled={true}
-          style={{flex: 1}}
+          style={styles.view}
           initialRegion={{
             latitude: 49.26335,
             longitude: -123.13703,

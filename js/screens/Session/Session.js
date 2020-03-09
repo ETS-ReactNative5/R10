@@ -4,6 +4,7 @@ import moment from 'moment';
 import GradientButton from '../../components/GradientButton';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import PropTypes from 'prop-types';
+import styles from './styles';
 
 const Session = ({
   data,
@@ -15,76 +16,27 @@ const Session = ({
   console.log(data);
   return (
     <ScrollView>
-      <View style={{padding: 18}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            width: '100%',
-          }}>
-          <Text
-            style={{
-              fontWeight: '500',
-              fontSize: 16,
-              paddingBottom: 15,
-              color: '#999',
-            }}>
-            {data.location}
-          </Text>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.location}>{data.location}</Text>
 
           {faveIds.includes(data.id) ? (
             <MaterialCommunityIcons size={18} name="heart" color="#cf392a" />
           ) : null}
         </View>
-        <Text style={{fontSize: 28, fontWeight: '500', paddingBottom: 10}}>
-          {data.title}
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            fontWeight: '600',
-            color: '#cf392a',
-            paddingBottom: 15,
-          }}>
+        <Text style={styles.title}>{data.title}</Text>
+        <Text style={styles.startTime}>
           {moment(data.startTime).format('LT')}{' '}
         </Text>
-        <Text style={{fontSize: 18, paddingBottom: 20}}>
-          {data.description}
-        </Text>
-        <Text
-          style={{
-            color: '#999',
-            fontWeight: '500',
-            fontSize: 16,
-            paddingBottom: 15,
-          }}>
-          Presented by:
-        </Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            borderBottomWidth: 1.5,
-            borderColor: '#e6e6e6',
-            paddingBottom: 20,
-          }}>
-          <Image
-            style={{width: 55, height: 55, borderRadius: 50}}
-            source={{uri: data.speaker.image}}
-          />
+        <Text style={styles.description}>{data.description}</Text>
+        <Text style={styles.location}>Presented by:</Text>
+        <View style={styles.border}>
+          <Image style={styles.avatar} source={{uri: data.speaker.image}} />
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Speaker', {speaker: data.speaker});
             }}>
-            <Text
-              style={{
-                paddingLeft: 15,
-                paddingTop: 16,
-                fontWeight: '500',
-                fontSize: 16,
-              }}>
-              {data.speaker.name}
-            </Text>
+            <Text style={styles.speaker}>{data.speaker.name}</Text>
           </TouchableOpacity>
         </View>
 

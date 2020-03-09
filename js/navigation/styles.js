@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  loader: {height: '100%'},
+  header: {backgroundColor: 'white', overflow: 'hidden'},
+  menuButton: {marginLeft: 10},
 });
 
 export default styles;

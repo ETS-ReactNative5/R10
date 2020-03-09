@@ -1,32 +1,18 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, SectionList, TouchableHighlight} from 'react-native';
 import moment from 'moment';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import PropTypes from 'prop-types';
+import styles from './styles';
 
 // Move all in-line styling to styles.js and import it into schedule.js
 
 const Schedule = props => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
+    <View style={styles.overview}>
       <SectionList
         renderSectionHeader={({section: {title}}) => (
-          <Text
-            style={{
-              paddingTop: 5,
-              paddingLeft: 10,
-              backgroundColor: '#e6e6e6',
-              fontWeight: '600',
-              height: 25,
-            }}>
-            {moment(title).format('LT')}
-          </Text>
+          <Text style={styles.time}>{moment(title).format('LT')}</Text>
         )}
         keyExtractor={item => item.id}
         renderItem={({item}) => {
@@ -37,7 +23,7 @@ const Schedule = props => {
                 underlayColor={'transparent'}
                 onPress={() => {
                   if (!item.speaker) {
-                    props.navigation.navigate('Maps', {});
+                    props.navigation.navigate('Schedule', {});
                   } else {
                     props.navigation.navigate('Session', {
                       item: item,
@@ -46,34 +32,12 @@ const Schedule = props => {
                   }
                 }}>
                 <View>
-                  <View
-                    style={{
-                      padding: 10,
-                      borderBottomWidth: 2,
-                      borderBottomColor: '#e6e6e6',
-                    }}>
-                    <Text
-                      style={{
-                        fontSize: 16,
-                        fontWeight: '500',
-                      }}>
-                      {item.title}
-                    </Text>
+                  <View style={styles.border}>
+                    <Text style={styles.title}>{item.title}</Text>
 
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        paddingTop: 8,
-                      }}>
+                    <View style={styles.position}>
                       <View>
-                        <Text
-                          style={{
-                            color: '#999999',
-                            fontWeight: '500',
-                          }}>
-                          {item.location}
-                        </Text>
+                        <Text style={styles.location}>{item.location}</Text>
                       </View>
 
                       <View>

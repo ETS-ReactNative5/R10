@@ -9,6 +9,7 @@ import {
   Animated,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import styles from './styles';
 
 if (Platform.OS === 'android') {
   UIManager.setLayoutAnimationEnabledExperimental &&
@@ -54,53 +55,25 @@ class ConductAnimation extends Component {
           }}>
           {this.state.toggle ? (
             <View>
-              <View style={{flexDirection: 'row', color: '#9963ea'}}>
+              <View style={styles.conductHeader}>
                 <View>
                   <Animated.View style={{transform: [{rotate: Spin}]}}>
-                    <Text
-                      style={{
-                        color: '#9963ea',
-                        fontWeight: '500',
-                        fontSize: 16,
-                      }}>
-                      -
-                    </Text>
+                    <Text style={styles.signs}>-</Text>
                   </Animated.View>
                 </View>
-                <Text
-                  style={{
-                    color: '#9963ea',
-                    fontWeight: '500',
-                    fontSize: 16,
-                    paddingLeft: 10,
-                  }}>
-                  {data.title}
-                </Text>
+                <Text style={styles.title}>{data.title}</Text>
               </View>
 
-              <Text style={{fontSize: 16, marginTop: 15, marginBottom: 15}}>
-                {data.description}
-              </Text>
+              <Text style={styles.description}>{data.description}</Text>
             </View>
           ) : (
-            <View style={{flexDirection: 'row'}}>
+            <View style={styles.row}>
               <View>
                 <Animated.View style={{transform: [{rotate: Spin}]}}>
-                  <Text
-                    style={{color: '#9963ea', fontWeight: '500', fontSize: 16}}>
-                    +
-                  </Text>
+                  <Text style={styles.signs}>+</Text>
                 </Animated.View>
               </View>
-              <Text
-                style={{
-                  color: '#9963ea',
-                  fontWeight: '500',
-                  fontSize: 16,
-                  paddingLeft: 10,
-                }}>
-                {data.title}
-              </Text>
+              <Text style={styles.title}>{data.title}</Text>
             </View>
           )}
         </TouchableOpacity>

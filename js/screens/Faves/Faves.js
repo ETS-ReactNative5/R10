@@ -4,6 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {formatSessionData} from '../Schedule/Helper/FormatSessionData';
 import moment from 'moment';
 import PropTypes from 'prop-types';
+import styles from './styles';
 
 const Faves = ({faveIds, navigation, sessions}) => {
   return (
@@ -11,16 +12,7 @@ const Faves = ({faveIds, navigation, sessions}) => {
       {sessions && sessions.length ? (
         <SectionList
           renderSectionHeader={({section: {title}}) => (
-            <Text
-              style={{
-                paddingTop: 5,
-                paddingLeft: 10,
-                backgroundColor: '#e6e6e6',
-                fontWeight: '600',
-                height: 25,
-              }}>
-              {moment(title).format('LT')}
-            </Text>
+            <Text style={styles.timeHeader}>{moment(title).format('LT')}</Text>
           )}
           sections={formatSessionData(sessions)}
           keyExtractor={item => item.id}
@@ -31,25 +23,11 @@ const Faves = ({faveIds, navigation, sessions}) => {
                   item: item,
                 });
               }}>
-              <View
-                style={{
-                  padding: 10,
-                  borderBottomWidth: 2,
-                  borderBottomColor: '#e6e6e6',
-                }}>
-                <Text style={{fontSize: 16, fontWeight: '500'}}>
-                  {item.title}
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    paddingTop: 8,
-                  }}>
+              <View style={styles.border}>
+                <Text style={styles.title}>{item.title}</Text>
+                <View style={styles.position}>
                   <View>
-                    <Text style={{color: '#999', fontWeight: '500'}}>
-                      {item.location}
-                    </Text>
+                    <Text style={styles.location}>{item.location}</Text>
                   </View>
                   <View>
                     <MaterialCommunityIcons
@@ -64,16 +42,8 @@ const Faves = ({faveIds, navigation, sessions}) => {
           )}
         />
       ) : (
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-            width: '100%',
-          }}>
-          <Text style={{fontSize: 16}}>
-            You haven't faved any sessions yet.
-          </Text>
+        <View style={styles.placeholder}>
+          <Text style={styles.text}>You haven't faved any sessions yet.</Text>
         </View>
       )}
     </View>
