@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const GradientButton = ({onPressed, title}) => (
   <TouchableOpacity
-    style={{width: 185, alignSelf: 'center', paddingTop: 20}}
+    style={{width: 200, alignSelf: 'center', paddingTop: 20}}
     activeOpacity={0.6}
     onPress={onPressed}>
     <LinearGradient
