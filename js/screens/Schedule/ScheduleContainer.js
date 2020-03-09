@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import {Text, ActivityIndicator} from 'react-native';
+import {Text} from 'react-native';
 import Schedule from './Schedule';
 import {gql} from 'apollo-boost';
 import {Query} from '@apollo/react-components';
 import {formatSessionData} from './Helper/FormatSessionData';
 import FavesProvider, {FavesContext} from '../../context/FavesContext';
+import Loader from '../../components/Loader';
 
 // SCHEDULE
 const SCHEDULE = gql`
@@ -34,9 +35,7 @@ export default class ScheduleContainer extends Component {
           <Query query={SCHEDULE}>
             {({loading, error, data}) => {
               if (loading) {
-                return (
-                  <ActivityIndicator size="large" style={{height: '100%'}} />
-                );
+                return <Loader />;
               }
               if (error) {
                 console.log('ERROR:', error);

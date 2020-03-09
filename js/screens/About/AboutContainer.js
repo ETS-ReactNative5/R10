@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Text, ActivityIndicator} from 'react-native';
+import {Text} from 'react-native';
 import About from './About';
 import {Query} from '@apollo/react-components';
 import {gql} from 'apollo-boost';
+import Loader from '../../components/Loader';
 
 const queryAbout = gql`
   query {
@@ -21,7 +22,7 @@ export default class AboutContainer extends Component {
       <Query query={queryAbout}>
         {({loading, error, data}) => {
           if (loading) {
-            return <ActivityIndicator size="large" style={{height: '100%'}} />;
+            return <Loader />;
           }
           if (error) {
             console.log('ERROR:', error);
