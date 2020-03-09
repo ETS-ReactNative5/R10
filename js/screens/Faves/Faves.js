@@ -3,6 +3,7 @@ import {Text, TouchableOpacity, SectionList, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {formatSessionData} from '../Schedule/Helper/FormatSessionData';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 const Faves = ({faveIds, navigation, sessions}) => {
   return (
@@ -77,5 +78,10 @@ const Faves = ({faveIds, navigation, sessions}) => {
       )}
     </View>
   );
+};
+
+Faves.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  sessions: PropTypes.array.isRequired,
 };
 export default Faves;

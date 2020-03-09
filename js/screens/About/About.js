@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Text, Image} from 'react-native';
 import ConductAnimation from '../../components/ConductAnimation';
+import PropTypes from 'prop-types';
 
 const About = ({data}) => {
   return (
@@ -55,6 +56,10 @@ const About = ({data}) => {
       </Text>
     </View>
   );
+};
+
+About.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 };
 
 export default About;

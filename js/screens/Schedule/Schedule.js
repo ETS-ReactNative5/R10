@@ -3,6 +3,7 @@ import React from 'react';
 import {View, Text, SectionList, TouchableHighlight} from 'react-native';
 import moment from 'moment';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import PropTypes from 'prop-types';
 
 // Move all in-line styling to styles.js and import it into schedule.js
 
@@ -97,4 +98,9 @@ const Schedule = props => {
   );
 };
 
+Schedule.propTypes = {
+  data: PropTypes.array.isRequired,
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 export default Schedule;

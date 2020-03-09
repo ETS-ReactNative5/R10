@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import GradientButton from '../../components/GradientButton';
+import PropTypes from 'prop-types';
 
 const Speaker = ({speaker, navigation}) => {
   return (
@@ -84,6 +85,11 @@ const Speaker = ({speaker, navigation}) => {
       </ScrollView>
     </View>
   );
+};
+
+Speaker.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  speaker: PropTypes.object.isRequired,
 };
 
 export default Speaker;

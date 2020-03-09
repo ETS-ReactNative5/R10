@@ -3,6 +3,7 @@ import {View, ScrollView, Text, Image, TouchableOpacity} from 'react-native';
 import moment from 'moment';
 import GradientButton from '../../components/GradientButton';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import PropTypes from 'prop-types';
 
 const Session = ({
   data,
@@ -11,6 +12,7 @@ const Session = ({
   addFaveSession,
   removeFaveSession,
 }) => {
+  console.log(data);
   return (
     <ScrollView>
       <View style={{padding: 18}}>
@@ -99,6 +101,22 @@ const Session = ({
       </View>
     </ScrollView>
   );
+};
+
+Session.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    speaker: PropTypes.object.isRequired,
+  }).isRequired,
+
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.array.isRequired,
+  addFaveSession: PropTypes.func.isRequired,
+  removeFaveSession: PropTypes.func.isRequired,
 };
 
 export default Session;
