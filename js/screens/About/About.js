@@ -1,35 +1,7 @@
 import React from 'react';
-import {
-  View,
-  ScrollView,
-  Text,
-  FlatList,
-  Image,
-  LayoutAnimation,
-  TouchableOpacity,
-  Platform,
-  UIManager,
-} from 'react-native';
-
-if (Platform.OS === 'android') {
-  if (UIManager.setLayoutAnimationEnabledExperimental) {
-    UIManager.setLayoutAnimationEnabledExperimental(true);
-  }
-}
+import {View, ScrollView, Text, Image} from 'react-native';
 
 const About = ({data}) => {
-  const animationConfig = {
-    duration: 4000,
-    create: {
-      type: 'linear',
-      property: 'opacity',
-    },
-    update: {type: 'spring', springDamping: 0.4},
-    delete: {
-      type: 'linear',
-      property: 'opacity',
-    },
-  };
   return (
     <View>
       <ScrollView>
@@ -58,23 +30,20 @@ const About = ({data}) => {
           <Text style={{fontSize: 21, fontWeight: '600', padding: 5}}>
             Code of Conduct
           </Text>
-          <FlatList
-            data={data}
-            keyExtractor={item => item.id}
-            renderItem={({item}) => {
-              return (
-                <View style={{padding: 5, fontSize: 16}}>
-                  <Text
-                    style={{
-                      fontWeight: '400',
-                    }}>
-                    {item.title}
-                  </Text>
-                  <Text>{item.description}</Text>
-                </View>
-              );
-            }}
-          />
+          {data.map(codeOfConduct => {
+            return (
+              <View key={codeOfConduct.id} style={{padding: 5, fontSize: 16}}>
+                <Text
+                  style={{
+                    fontWeight: '400',
+                  }}>
+                  {codeOfConduct.title}
+                </Text>
+                <Text>{codeOfConduct.description}</Text>
+              </View>
+            );
+          })}
+
           <Text style={{fontSize: 16, borderTopWidth: 1}}>
             &copy; Ringo Wong 2020
           </Text>
