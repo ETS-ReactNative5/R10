@@ -2,6 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {sharedScreenOptions} from './config';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import ScheduleScreen from '../screens/Schedule';
 import SessionScreen from '../screens/Session';
@@ -56,7 +57,31 @@ const MapsStackScreen = () => {
 const Drawer = createDrawerNavigator();
 
 const DrawerNav = () => (
-  <Drawer.Navigator>
+  <Drawer.Navigator
+    drawerContentOptions={{
+      activeTintColor: '#9963ea',
+      activeBackgroundColor: '#e6e6e6',
+      labelStyle: {
+        fontFamily: 'Montserrat-Regular',
+      },
+    }}
+    screenOptions={({route}) => ({
+      drawerIcon: ({focused, size, color}) => {
+        let iconName;
+        if (route.name === 'Schedule') {
+          iconName = focused ? 'calendar' : 'calendar-blank-outline';
+        } else if (route.name === 'Maps') {
+          iconName = focused ? 'map' : 'map-outline';
+        } else if (route.name === 'Faves') {
+          iconName = focused ? 'heart' : 'heart-outline';
+        } else if (route.name === 'About') {
+          iconName = focused ? 'information' : 'information-outline';
+        }
+        return (
+          <MaterialCommunityIcons name={iconName} size={size} color={color} />
+        );
+      },
+    })}>
     <Drawer.Screen name="Schedule" component={ScheduleStackScreen} />
     <Drawer.Screen name="Maps" component={MapsStackScreen} />
     <Drawer.Screen name="Faves" component={FavesStackScreen} />

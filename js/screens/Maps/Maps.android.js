@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
+import styles from './styles';
 
 export default class Maps extends Component {
   render() {
     return (
       <View>
-        <Text style={{alignSelf: 'center', justifyContent: 'center'}}>
-          Coming Soon
-        </Text>
+        <Text style={styles.placeholder}>Coming Soon!</Text>
       </View>
     );
   }
