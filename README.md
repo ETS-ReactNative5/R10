@@ -29,6 +29,10 @@ To get started, fork or clone the repository and follow the instructions below.
 
 `yarn install`
 
+`gem install cocoapods`
+`cd ios`
+`pod install`
+
 ### To Run
 
 `yarn ios and/or yarn android`
