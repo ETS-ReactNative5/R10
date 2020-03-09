@@ -6,7 +6,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
-const Faves = ({faveIds, navigation, sessions}) => {
+const Faves = ({navigation, sessions}) => {
   return (
     <View>
       {sessions && sessions.length ? (

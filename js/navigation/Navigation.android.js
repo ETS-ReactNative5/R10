@@ -14,7 +14,7 @@ const FavesStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 const MapsStack = createStackNavigator();
 
-const ScheduleStackScreen = props => {
+const ScheduleStackScreen = () => {
   return (
     <ScheduleStack.Navigator
       screenOptions={sharedScreenOptions}
@@ -25,7 +25,7 @@ const ScheduleStackScreen = props => {
   );
 };
 
-const FavesStackScreen = props => {
+const FavesStackScreen = () => {
   return (
     <FavesStack.Navigator
       screenOptions={sharedScreenOptions}
@@ -36,7 +36,7 @@ const FavesStackScreen = props => {
   );
 };
 
-const AboutStackScreen = props => {
+const AboutStackScreen = () => {
   return (
     <AboutStack.Navigator
       screenOptions={sharedScreenOptions}
@@ -45,7 +45,7 @@ const AboutStackScreen = props => {
     </AboutStack.Navigator>
   );
 };
-const MapsStackScreen = props => {
+const MapsStackScreen = () => {
   return (
     <MapsStack.Navigator screenOptions={sharedScreenOptions}>
       <MapsStack.Screen name="Map" component={MapScreen} />
@@ -55,7 +55,7 @@ const MapsStackScreen = props => {
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNav = props => (
+const DrawerNav = () => (
   <Drawer.Navigator>
     <Drawer.Screen name="Schedule" component={ScheduleStackScreen} />
     <Drawer.Screen name="Maps" component={MapsStackScreen} />

@@ -13,7 +13,6 @@ const Session = ({
   addFaveSession,
   removeFaveSession,
 }) => {
-  console.log(data);
   return (
     <ScrollView>
       <View style={styles.container}>

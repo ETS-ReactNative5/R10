@@ -4,11 +4,10 @@ import Schedule from './Schedule';
 import {gql} from 'apollo-boost';
 import {Query} from '@apollo/react-components';
 import {formatSessionData} from './Helper/FormatSessionData';
-import FavesProvider, {FavesContext} from '../../context/FavesContext';
+import {FavesContext} from '../../context/FavesContext';
 import Loader from '../../components/Loader';
 import PropTypes from 'prop-types';
 
-// SCHEDULE
 const SCHEDULE = gql`
   query {
     allSessions {

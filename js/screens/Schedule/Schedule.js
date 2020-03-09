@@ -5,8 +5,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import PropTypes from 'prop-types';
 import styles from './styles';
 
-// Move all in-line styling to styles.js and import it into schedule.js
-
 const Schedule = props => {
   return (
     <View style={styles.overview}>
