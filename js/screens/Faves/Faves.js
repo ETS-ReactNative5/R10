@@ -65,8 +65,10 @@ const Faves = ({faveIds, navigation, sessions}) => {
       ) : (
         <View
           style={{
-            justifyContent: 'center',
             alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+            width: '100%',
           }}>
           <Text style={{fontSize: 16}}>
             You haven't faved any sessions yet.
