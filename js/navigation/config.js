@@ -29,6 +29,7 @@ const MenuButton = ({navigation}) => {
 };
 export const sharedScreenOptions = props => ({
   headerBackTitleVisible: false,
+  headerTintColor: '#fff',
   header: props => <GradientHeader {...props} />,
   headerStyle: {
     backgroundColor: 'transparent',
