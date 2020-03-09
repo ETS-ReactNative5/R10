@@ -2,10 +2,13 @@
 
 A mobile application using React Native for an upcoming developer conference called R10.
 
+Note: iOS is running Apple maps while Android is running Google maps.
+
 # Screenshots
 
 ![Schedule](js/assets/Screenshots/schedule1.png)
 ![Maps](js/assets/Screenshots/map.png)
+![androidMap](js/assets/Screenshots/androidMap.png)
 ![Faves](js/assets/Screenshots/faves.png)
 ![Session](js/assets/Screenshots/session.png)
 ![Speaker](js/assets/Screenshots/speaker.png)
