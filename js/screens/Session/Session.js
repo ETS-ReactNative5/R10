@@ -13,7 +13,7 @@ const Session = ({
 }) => {
   return (
     <ScrollView>
-      <View style={{padding: 18, justifyContent: 'space-around'}}>
+      <View style={{padding: 18}}>
         <View
           style={{
             flexDirection: 'row',
@@ -25,7 +25,7 @@ const Session = ({
             style={{
               fontWeight: '500',
               fontSize: 16,
-              paddingBottom: 10,
+              paddingBottom: 15,
               color: '#999',
             }}>
             {data.location}
@@ -43,11 +43,11 @@ const Session = ({
             fontSize: 16,
             fontWeight: '600',
             color: '#cf392a',
-            paddingBottom: 10,
+            paddingBottom: 15,
           }}>
           {moment(data.startTime).format('LT')}{' '}
         </Text>
-        <Text style={{fontSize: 16, paddingBottom: 20}}>
+        <Text style={{fontSize: 18, paddingBottom: 20}}>
           {data.description}
         </Text>
         <Text
@@ -55,15 +55,16 @@ const Session = ({
             color: '#999',
             fontWeight: '500',
             fontSize: 16,
-            paddingBottom: 10,
+            paddingBottom: 15,
           }}>
           Presented by:
         </Text>
         <View
           style={{
             flexDirection: 'row',
-            borderBottomWidth: 2,
+            borderBottomWidth: 1.5,
             borderColor: '#e6e6e6',
+            paddingBottom: 20,
           }}>
           <Image
             style={{width: 55, height: 55, borderRadius: 50}}
