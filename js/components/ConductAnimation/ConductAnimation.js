@@ -54,25 +54,53 @@ class ConductAnimation extends Component {
           }}>
           {this.state.toggle ? (
             <View>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{flexDirection: 'row', color: '#9963ea'}}>
                 <View>
                   <Animated.View style={{transform: [{rotate: Spin}]}}>
-                    <Text>-</Text>
+                    <Text
+                      style={{
+                        color: '#9963ea',
+                        fontWeight: '500',
+                        fontSize: 16,
+                      }}>
+                      -
+                    </Text>
                   </Animated.View>
                 </View>
-                <Text>{data.title}</Text>
+                <Text
+                  style={{
+                    color: '#9963ea',
+                    fontWeight: '500',
+                    fontSize: 16,
+                    paddingLeft: 10,
+                  }}>
+                  {data.title}
+                </Text>
               </View>
 
-              <Text>{data.description}</Text>
+              <Text style={{fontSize: 16, marginTop: 15, marginBottom: 15}}>
+                {data.description}
+              </Text>
             </View>
           ) : (
             <View style={{flexDirection: 'row'}}>
               <View>
                 <Animated.View style={{transform: [{rotate: Spin}]}}>
-                  <Text>+</Text>
+                  <Text
+                    style={{color: '#9963ea', fontWeight: '500', fontSize: 16}}>
+                    +
+                  </Text>
                 </Animated.View>
               </View>
-              <Text>{data.title}</Text>
+              <Text
+                style={{
+                  color: '#9963ea',
+                  fontWeight: '500',
+                  fontSize: 16,
+                  paddingLeft: 10,
+                }}>
+                {data.title}
+              </Text>
             </View>
           )}
         </TouchableOpacity>
