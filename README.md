@@ -4,12 +4,12 @@ A mobile application using React Native for an upcoming developer conference cal
 
 # Screenshots
 
-![Schedule, 25%](js/assets/Screenshots/schedule.png)
-![Maps, 25%](js/assets/Screenshots/map.png)
-![Faves, 25%](js/assets/Screenshots/faves.png)
-![Session, 25%](js/assets/Screenshots/session.png)
-![Speaker, 25%](js/assets/Screenshots/speaker.png)
-![About, 25%](js/assets/Screenshots/about.png)
+![Schedule](js/assets/Screenshots/schedule.png)
+![Maps](js/assets/Screenshots/map.png)
+![Faves](js/assets/Screenshots/faves.png)
+![Session](js/assets/Screenshots/session.png)
+![Speaker](js/assets/Screenshots/speaker.png)
+![About](js/assets/Screenshots/about.png)
 
 ## Getting Started
 
@@ -21,6 +21,10 @@ To get started, fork or clone the repository and follow the instructions below.
 - [Xcode](https://developer.apple.com/xcode/)
 - [CocoaPods](https://cocoapods.org/)
 - [Android Studio](https://developer.android.com/studio/)
+
+### Installation
+
+`yarn install`
 
 ### To Run
 
@@ -36,6 +40,12 @@ To get started, fork or clone the repository and follow the instructions below.
 
 - [XCode](https://developer.apple.com/xcode/)
 - [Android Studio](https://developer.android.com/studio)
+
+## Key Learnings
+
+Increased understanding of how to use, style and animate React Native components and how they differ from React.
+
+Gained better understanding of the perks and quirks of React Native as a cross-platform technology.
 
 ## Authors
 
