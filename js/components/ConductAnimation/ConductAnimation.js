@@ -28,7 +28,7 @@ class ConductAnimation extends Component {
     this.state.rotate.setValue(0);
     Animated.timing(this.state.rotate, {
       toValue: 1,
-      duration: 300,
+      duration: 250,
     }).start();
   };
 
@@ -42,7 +42,7 @@ class ConductAnimation extends Component {
     const {data} = this.props;
     const Spin = this.state.rotate.interpolate({
       inputRange: ['0', '1'],
-      outputRange: ['0deg', '-360deg'],
+      outputRange: ['0deg', '-180deg'],
     });
 
     return (
