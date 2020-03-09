@@ -4,12 +4,12 @@ A mobile application using React Native for an upcoming developer conference cal
 
 # Screenshots
 
-![Schedule](js/assets/Screenshots/schedule.png)
-![Maps](js/assets/Screenshots/map.png)
-![Faves](js/assets/Screenshots/faves.png)
-![Session](js/assets/Screenshots/session.png)
-![Speaker](js/assets/Screenshots/speaker.png)
-![About](js/assets/Screenshots/about.png)
+![Schedule, 25%](js/assets/Screenshots/schedule.png)
+![Maps, 25%](js/assets/Screenshots/map.png)
+![Faves, 25%](js/assets/Screenshots/faves.png)
+![Session, 25%](js/assets/Screenshots/session.png)
+![Speaker, 25%](js/assets/Screenshots/speaker.png)
+![About, 25%](js/assets/Screenshots/about.png)
 
 ## Getting Started
 
