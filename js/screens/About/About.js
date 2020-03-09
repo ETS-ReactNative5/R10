@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, ScrollView, Text, Image} from 'react-native';
+import ConductAnimation from '../../components/ConductAnimation';
 
 const About = ({data}) => {
   return (
@@ -33,13 +34,14 @@ const About = ({data}) => {
           {data.map(codeOfConduct => {
             return (
               <View key={codeOfConduct.id} style={{padding: 5, fontSize: 16}}>
-                <Text
+                <ConductAnimation data={codeOfConduct} />
+                {/* <Text
                   style={{
                     fontWeight: '400',
                   }}>
                   {codeOfConduct.title}
                 </Text>
-                <Text>{codeOfConduct.description}</Text>
+                <Text>{codeOfConduct.description}</Text> */}
               </View>
             );
           })}
