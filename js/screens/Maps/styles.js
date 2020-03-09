@@ -6,6 +6,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 16,
   },
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    height: 550,
+    width: 380,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
 });
 
 export default styles;
