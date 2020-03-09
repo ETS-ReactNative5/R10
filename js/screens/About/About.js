@@ -8,15 +8,20 @@ const About = ({data}) => {
       <ScrollView>
         <View
           style={{
-            borderBottomWidth: 1,
-            borderColor: '#999',
+            borderBottomWidth: 1.5,
+            borderColor: '#e6e6e6',
             height: 85,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
           <Image source={require('../../assets/images/r10_logo.png')} />
         </View>
-        <View style={{padding: 10, borderBottomWidth: 1}}>
+        <View
+          style={{
+            padding: 10,
+            borderBottomWidth: 1.5,
+            borderColor: '#e6e6e6',
+          }}>
           <Text style={{fontSize: 16, padding: 5}}>
             R10 is a conference that focuses on just about any topic related to
             dev.
@@ -40,7 +45,12 @@ const About = ({data}) => {
           })}
         </View>
       </ScrollView>
-      <Text style={{fontSize: 16, borderTopWidth: 1}}>
+      <Text
+        style={{
+          fontSize: 16,
+          paddingTop: 20,
+          paddingLeft: 15,
+        }}>
         &copy; Ringo Wong 2020
       </Text>
     </View>
