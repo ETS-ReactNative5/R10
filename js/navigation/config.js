@@ -1,9 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, Platform} from 'react-native';
+import {StyleSheet, View, Platform, TouchableHighlight} from 'react-native';
 import {Header} from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './styles';
+
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const GradientHeader = props => (
   <View style={styles.header}>
@@ -36,6 +38,23 @@ export const sharedScreenOptions = props => ({
     backgroundColor: 'transparent',
   },
   ...Platform.select({
-    android: {headerLeft: () => <MenuButton navigation={props.navigation} />},
+    android: {
+      headerLeft: () =>
+        props.route.name === 'Session' ? (
+          <TouchableHighlight
+            style={styles.menuButton}
+            underlayColor={'transparent'}
+            onPress={() => props.navigation.goBack()}>
+            <MaterialCommunityIcons
+              name="arrow-left"
+              size={28}
+              color={'white'}
+              style={styles.close}
+            />
+          </TouchableHighlight>
+        ) : (
+          <MenuButton navigation={props.navigation} />
+        ),
+    },
   }),
 });
