@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
   },
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 550,
-    width: 380,
+    height: 620,
+    width: 440,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
